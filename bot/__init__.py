@@ -15,9 +15,9 @@ BOT_TOKEN = get_env('BOT_TOKEN')
 
 # messages
 
-SOURCE = "\nsource: https://github.com/AbhijithNT/TelegramFiletoCloud"
-START = "\n<b>This bot uploads telegram files to MixDrop.co,File.io.\nAdmin: @thankappan369</b>"
-ERROR = "something is went wrong\n{error} \ncontact admin @thankappan369"
+SOURCE = "\nsource: https://t.me/movie_time_botonly"
+START = "\n<b>This bot uploads telegram files to MixDrop.co,File.io.\nAdmin: @fligher</b>"
+ERROR = "something is went wrong\n{error} \ncontact admin @fligher"
 HELP = "Usage: <b>Send any file and the bot will upload it to MixDrop.co,File.io</b>"
 
 
