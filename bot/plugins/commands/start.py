@@ -1,5 +1,6 @@
 from bot.filetocloud import CloudBot, filters
 from bot import START, SOURCE
+from pyrogram import enums
 
 
 @CloudBot.on_message(filters.command("start"))
@@ -8,5 +9,5 @@ async def start_message(client, message):
         chat_id=message.chat.id,
         text=f"Hey {message.from_user.first_name},{START}{SOURCE}",
         reply_to_message_id=message.id,
-        parse_mode="HTML"
-    )
+        enums.ParseMode.HTML
+)
