@@ -15,7 +15,7 @@ async def upload_handler(client: CloudBot, message: CallbackQuery, file_name: st
         logger.error(f"{e}")
         await client.edit_message_text(
             chat_id=message.from_user.id,
-            message_id=message.message.message_id,
+            message_id=message.message.id,
             text=f"**File downloading error:** `{e}`",
         )
         return
@@ -24,7 +24,7 @@ async def upload_handler(client: CloudBot, message: CallbackQuery, file_name: st
             await client.edit_message_text(
                 chat_id=message.message.chat.id,
                 text="Temporarily down",
-                message_id=message.message.message_id,
+                message_id=message.message.id,
             )
             return
 
@@ -50,14 +50,14 @@ async def upload_handler(client: CloudBot, message: CallbackQuery, file_name: st
                 f"\nFile Size: `{file_size}`"
                 f'\nURL: `{_URL}`'
             ),
-            message_id=message.message.message_id
+            message_id=message.message.id
             # reply_markup=completedKeyboard(dl)
         )
     except Exception as e:
         logger.error(f'{e}')
         await client.edit_message_text(
             chat_id=message.from_user.id,
-            message_id=message.message.message_id,
+            message_id=message.message.id,
             text=f"**File uploading error:** `{e}`",
         )
         return
