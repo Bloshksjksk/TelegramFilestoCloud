@@ -7,6 +7,6 @@ async def start_message(client, message):
     await client.send_message(
         chat_id=message.chat.id,
         text=f"Hey {message.from_user.first_name},{START}{SOURCE}",
-        reply_to_message_id=message.message_id,
+        reply_to_message_id=message.id,
         parse_mode="html"
     )
