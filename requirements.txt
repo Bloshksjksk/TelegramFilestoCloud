@@ -3,3 +3,4 @@ TgCrypto
 aiohttp
 hurry.filesize
 python-dotenv
+Logger
