@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# This is bot coded by Abhijith N T and used for educational purposes only
-# https://github.com/AbhijithNT
-# Copyright ABHIJITH N T
-# Thank you https://github.com/pyrogram/pyrogram
-
-
 from ...filetocloud import CloudBot, filters
 from bot import LOGGER
 from hurry.filesize import size
@@ -25,7 +18,7 @@ else:
     AUDIO = filters.audio
 
 
-logger = LOGGER(__name__)
+logger = LOGGER(name)
 
 
 @CloudBot.on_message(VIDEO)
@@ -36,11 +29,10 @@ async def userVideo(client, bot):
     await client.send_message(
         chat_id=bot.chat.id,
         text=(
-            f"File Name: `{file_name}`"
-            f"File Size: `{file_size}`"
+            f"File Name: {file_name}"
+            f"File Size: {file_size}"
         ),
-        reply_markup=server_select(file_name,file_size),
-        reply_to_message_id=bot.message_id
+        reply_markup=server_select(file_name,file_size)
     )
 
 
@@ -52,11 +44,10 @@ async def userDocument(client, bot):
     await client.send_message(
         chat_id=bot.chat.id,
         text=(
-            f"File Name: `{file_name}`"
-            f"File Size: `{file_size}`"
+            f"File Name: {file_name}"
+            f"File Size: {file_size}"
         ),
-        reply_markup=server_select(file_name,file_size),
-        reply_to_message_id=bot.message_id
+        reply_markup=server_select(file_name,file_size)
     )
 
 
@@ -68,9 +59,8 @@ async def userAudio(client, bot):
     await client.send_message(
         chat_id=bot.chat.id,
         text=(
-            f"File Name: <code>`{file_name}`</code>"
+            f"File Name: <code>{file_name}</code>"
             f"\nFile Size: <code>{file_size}</code>"
         ),
-        reply_markup=server_select(file_name,file_size),
-        reply_to_message_id=bot.message_id
+        reply_markup=server_select(file_name,file_size)
     )
