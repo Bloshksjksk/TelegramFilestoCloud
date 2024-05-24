@@ -15,7 +15,7 @@ async def download_media(client: CloudBot, message: CallbackQuery, ) -> str:
     now = time.time()
     user_message = await client.edit_message_text(
         chat_id=message.from_user.id,
-        message_id=message.message.message_id,
+        message_id=message.message.id,
         text="processing your request...please wait",
     )
     try:
