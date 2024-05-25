@@ -32,7 +32,8 @@ async def userVideo(client, bot):
             f"File Name: {file_name}"
             f"File Size: {file_size}"
         ),
-        reply_markup=server_select(file_name,file_size)
+        reply_markup=server_select(file_name,file_size),
+        reply_to_message_id=message.id
     )
 
 
@@ -47,7 +48,8 @@ async def userDocument(client, bot):
             f"File Name: {file_name}"
             f"File Size: {file_size}"
         ),
-        reply_markup=server_select(file_name,file_size)
+        reply_markup=server_select(file_name,file_size),
+        reply_to_message_id=message.id
     )
 
 
@@ -62,5 +64,6 @@ async def userAudio(client, bot):
             f"File Name: <code>{file_name}</code>"
             f"\nFile Size: <code>{file_size}</code>"
         ),
-        reply_markup=server_select(file_name,file_size)
+        reply_markup=server_select(file_name,file_size),
+        reply_to_message_id=message.id
     )
