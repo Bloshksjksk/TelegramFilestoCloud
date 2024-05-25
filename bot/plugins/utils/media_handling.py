@@ -18,7 +18,7 @@ else:
     AUDIO = filters.audio
 
 
-logger = LOGGER(name)
+logger = LOGGER(__name__)
 
 
 @CloudBot.on_message(VIDEO)
